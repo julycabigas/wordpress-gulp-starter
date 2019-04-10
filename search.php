@@ -49,7 +49,7 @@ get_header();
 			</main><!-- #main -->
 
 			
-			<?php zero_pagination(); ?>
+			<?php themezero_pagination(); ?>
 
 
 <?php get_footer(); ?>

@@ -51,7 +51,7 @@ get_header();
 
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php themezero_pagination(); ?>
 
 
     </div>

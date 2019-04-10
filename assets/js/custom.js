@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Custom JS.
  *
@@ -5,11 +7,4 @@
  *
  * @since 1.0.0
  */
-
-
-
-
-
-
- console.log('test');
-
+console.log('test');

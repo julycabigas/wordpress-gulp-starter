@@ -27,21 +27,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 
 <body <?php body_class(); ?>>
-
+<!-- Site-header -->
 <header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
 	
 		<div class="container">
-			<?php get_template_part( 'template-parts/header/site', 'logo' ) ?>
+			<div class="site-logo">
+				<?php themezero_get_logo() ?>
+			</div>
+			<?php if ( has_nav_menu( 'top' ) ) : ?>
+				<div class="navigation-top">
+					<div class="wrap">
+						<?php get_template_part( 'template-parts/navigation/main', 'menu' ); ?>
+					</div><!-- .wrap -->
+				</div><!-- .navigation-top -->
+			<?php endif; ?>
 		</div>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
 </header>
-
-<a class="sr-only" href="#main">Skip to main content</a>	
+<!-- ./Site-header -->
+<!-- Accessibility -->
+<div class="container screen-reader-text">
+	<a href="#main">Skip to main content</a>	
+</div>
+<!-- ./Accessibility -->

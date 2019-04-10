@@ -5,7 +5,7 @@
 * Learn more: https://codex.wordpress.org/Functions_File_Explained
 *
 * @since   1.0.0
-* @package themezero
+* @package starter
 */
 
 

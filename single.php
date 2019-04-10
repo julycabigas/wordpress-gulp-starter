@@ -19,7 +19,7 @@ get_template_part( 'template-parts/loop/content', 'banner' );
 
 					<?php get_template_part( 'template-parts/loop/content', 'single' ); ?>
 
-						<?php //zero_breadcrumbs(); ?>
+						<?php //themezero_breadcrumbs(); ?>
 
 					<?php
 						//If comments are open or we have at least one comment, load up the comment template.

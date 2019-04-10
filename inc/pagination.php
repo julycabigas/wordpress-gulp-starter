@@ -13,8 +13,8 @@
  * Credits to http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
  */
 
-if ( ! function_exists( 'zero_pagination' ) ) :
-function zero_pagination() {
+if ( ! function_exists( 'themezero_pagination' ) ) :
+function themezero_pagination() {
 	if ( is_singular() ) {
 		return;
 	}
