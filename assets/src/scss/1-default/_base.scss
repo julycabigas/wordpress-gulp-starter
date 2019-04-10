@@ -19,8 +19,8 @@ html {
 
 body {
     color: $dark_color;
-    font-family: $body_text, "Helvetica Neue", helvetica, arial, sans-serif;
-    @include rem("font-size", 18);
+    font-family: $body_text;
+    @include rem("font-size", 17);
     font-weight: 400;
     line-height: 1.66;
     letter-spacing: 0; 
@@ -42,10 +42,28 @@ h6 {
     line-height: $primary_line_height;
     margin: 0 0 0.3em;
     padding: 0;
-    font-weight: normal;
+    font-family: $body_heading;
     color: $darker_color;
 }
 
+h1 {
+    font-size: 38px;
+}
+h2 {
+    font-size: 33px;
+}
+h3 {
+    font-size: 28px;
+}
+h4 {
+    font-size: 24px;
+}
+h5 {
+    font-size: 20px;
+}
+h6 {
+    font-size: 18px;
+}
 
 /*----------------
  List
@@ -81,7 +99,7 @@ dd {
 ----------------*/
 a {
     text-decoration: none;
-
+    color: $secondary_color;
     &:hover,
     &:focus {
       cursor: pointer !important;

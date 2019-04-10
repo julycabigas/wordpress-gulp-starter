@@ -20,6 +20,9 @@
         wp_nav_menu( array(
 		    'menu'           => 'Primary Menu', // Do not fall back to first non-empty menu.
 		    'theme_location' => 'top',
+		    'menu_class' 	 => false,
+		    'container'      => false,
+		    'container_class'=> false,
 		    'fallback_cb'    => false // Do not fall back to wp_page_menu()
 		)); 
 

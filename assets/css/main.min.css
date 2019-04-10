@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}
 body{margin:0}
 main{display:block}
 h1{font-size:2em;margin:.67em 0}
@@ -78,18 +78,25 @@ template{display:none}
 .offset-9{margin-left:75%}
 .offset-10{margin-left:83.3333333333%}
 .offset-11{margin-left:91.6666666667%}
-@font-face{font-family:"muli";font-style:normal;font-weight:normal;src:url("assets/fonts/muli/Muli.eot");src:url("assets/fonts/muli/Muli.eot#iefix") format("embedded-opentype"),url("assets/fonts/muli/Muli.woff") format("woff"),url("assets/fonts/muli/Muli.ttf") format("truetype"),url("assets/fonts/muli/Muli.svg#Muli") format("svg")}
+@font-face{font-family:"bariol";font-style:normal;font-weight:normal;src:url("assets/fonts/bariol/Bariol-Regular.eot");src:url("assets/fonts/bariol/Bariol-Regular.eot#iefix") format("embedded-opentype"),url("assets/fonts/bariol/Bariol-Regular.woff") format("woff"),url("assets/fonts/bariol/Bariol-Regular.ttf") format("truetype"),url("assets/fonts/bariol/Bariol-Regular.svg#Bariol-Regular") format("svg")}
+@font-face{font-family:"bariol bold";font-style:normal;font-weight:normal;src:url("assets/fonts/bariol/Bariol-Bold.eot");src:url("assets/fonts/bariol/Bariol-Bold.eot#iefix") format("embedded-opentype"),url("assets/fonts/bariol/Bariol-Bold.woff") format("woff"),url("assets/fonts/bariol/Bariol-Bold.ttf") format("truetype"),url("assets/fonts/bariol/Bariol-Bold.svg#Bariol-Bold") format("svg")}
 *,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility}
 html{font-size:62.5%;height:100%;min-height:100%}
-body{color:#222;font-family:"fax sans",sans-serif,"Helvetica Neue",helvetica,arial,sans-serif;font-size:18px;font-size:1.8rem;font-weight:400;line-height:1.66;letter-spacing:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-h1,h2,h3,h4,h5,h6{clear:both;line-height:1.4;margin:0 0 .3em;padding:0;font-weight:normal;color:#222}
+body{color:#222;font-family:"bariol","Helvetica Neue",helvetica,arial,sans-serif;font-size:17px;font-size:1.7rem;font-weight:400;line-height:1.66;letter-spacing:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,h4,h5,h6{clear:both;line-height:1.4;margin:0 0 .3em;padding:0;font-family:"bariol","Helvetica Neue",helvetica,arial,sans-serif;color:#222}
+h1{font-size:38px}
+h2{font-size:33px}
+h3{font-size:28px}
+h4{font-size:24px}
+h5{font-size:20px}
+h6{font-size:18px}
 ol{list-style:none}
 ul{padding:0;list-style:none;margin:0}
 ul ul{padding-top:8px}
 li{padding-bottom:8px}
 dt{font-weight:700}
 dd{margin:0 1.5em 1.5em}
-a{text-decoration:none}
+a{text-decoration:none;color:#2b4da0}
 a:hover,a:focus{cursor:pointer !important;outline:0;text-decoration:none;color:#fdc218}
 button{border:0;outline:0;-webkit-box-shadow:none;box-shadow:none;display:block;padding:0}
 blockquote,q{quotes:none}
@@ -111,10 +118,10 @@ input+button,input+input[type="button"],input+input[type="submit"]{padding:.75em
 button.secondary,input[type="reset"],input[type="button"].secondary,input[type="reset"].secondary,input[type="submit"].secondary{background-color:#ddd;color:#222}
 button:hover,button:focus,input[type="button"]:hover,input[type="button"]:focus,input[type="submit"]:hover,input[type="submit"]:focus{background:#222}
 button.secondary:hover,button.secondary:focus,input[type="reset"]:hover,input[type="reset"]:focus,input[type="button"].secondary:hover,input[type="button"].secondary:focus,input[type="reset"].secondary:hover,input[type="reset"].secondary:focus,input[type="submit"].secondary:hover,input[type="submit"].secondary:focus{background:#bbb}
-::-webkit-input-placeholder{color:#333;font-family:"fax sans",sans-serif,"Helvetica Neue",helvetica,arial,sans-serif}
-:-moz-placeholder{color:#333;font-family:"fax sans",sans-serif,"Helvetica Neue",helvetica,arial,sans-serif}
-::-moz-placeholder{color:#333;font-family:"fax sans",sans-serif,"Helvetica Neue",helvetica,arial,sans-serif;opacity:1}
-:-ms-input-placeholder{color:#333;font-family:"fax sans",sans-serif,"Helvetica Neue",helvetica,arial,sans-serif}
+::-webkit-input-placeholder{color:#333;font-family:"bariol","Helvetica Neue",helvetica,arial,sans-serif,"Helvetica Neue",helvetica,arial,sans-serif}
+:-moz-placeholder{color:#333;font-family:"bariol","Helvetica Neue",helvetica,arial,sans-serif,"Helvetica Neue",helvetica,arial,sans-serif}
+::-moz-placeholder{color:#333;font-family:"bariol","Helvetica Neue",helvetica,arial,sans-serif,"Helvetica Neue",helvetica,arial,sans-serif;opacity:1}
+:-ms-input-placeholder{color:#333;font-family:"bariol","Helvetica Neue",helvetica,arial,sans-serif,"Helvetica Neue",helvetica,arial,sans-serif}
 hr{background-color:#bbb;border:0;height:1px;margin-bottom:1.5em}
 img{max-width:100%}
 strong{font-weight:700}
@@ -191,6 +198,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 #wp-calendar tfoot #next{font-size:10px;text-transform:uppercase;text-align:right}
 #wp-calendar tfoot #prev{font-size:10px;text-transform:uppercase;padding-top:10px}
 .size-auto,.size-full,.size-large,.size-medium,.size-thumbnail{max-width:100%;height:auto}
+.site-header{padding:10px 0}
 @media(min-width:576px){.container{max-width:540px}
 .col-sm{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-sm-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}

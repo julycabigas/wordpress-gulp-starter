@@ -29,19 +29,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 <!-- Site-header -->
 <header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
-	
-		<div class="container">
-			<div class="site-logo">
-				<?php themezero_get_logo() ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<!-- Site-logo --> 
+				<div class="site-logo">
+					<?php themezero_get_logo() ?>
+				</div>
+				<!-- ./Site-logo --> 
 			</div>
-			<?php if ( has_nav_menu( 'top' ) ) : ?>
-				<div class="navigation-top">
-					<div class="wrap">
+			<div class="col-sm-9">
+				<?php if ( has_nav_menu( 'top' ) ) : ?>
+					<!-- Main Menu --> 
+					<div class="main-menu">
+						
 						<?php get_template_part( 'template-parts/navigation/main', 'menu' ); ?>
-					</div><!-- .wrap -->
-				</div><!-- .navigation-top -->
-			<?php endif; ?>
+			
+					</div>
+					<!-- . Main Menu -->
+				<?php endif; ?>
+			</div>
 		</div>
+	</div>
 </header>
 <!-- ./Site-header -->
 <!-- Accessibility -->

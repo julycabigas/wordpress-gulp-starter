@@ -13,17 +13,16 @@ $gray_color : #666;
 $w			     : #ffffff;
 $b			     : #000000;
 $primary_color   : #FDC218;
-$secondary_color : #FDC218;
+$secondary_color : #2B4DA0;
 $dark_color 	 : #222;
 
 /* ---------------------------------------------------
  * Fonts
  * -------------------------------------------------- */
 
- @include fontface('muli', 'assets/fonts/muli', 'Muli');
-
- $body_text : 'fax sans', sans-serif;
- $body_heading: 'fax sans', sans-serif;
+ 
+ $body_text : 'bariol', "Helvetica Neue", helvetica, arial, sans-serif;
+ $body_heading: "bariol", "Helvetica Neue", helvetica, arial, sans-serif;
 
 
 
