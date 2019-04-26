@@ -18,16 +18,18 @@ html {
 }
 
 body {
-    color: $dark_color;
+    color: $darker_color;
     font-family: $body_text;
-    @include rem("font-size", 17);
+    @include rem("font-size", 16);
     font-weight: 400;
     line-height: 1.66;
     letter-spacing: 0; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+p {
+    margin: 0 0 10px 0;
+}
 
 /*----------------
  Headings
@@ -43,7 +45,7 @@ h6 {
     margin: 0 0 0.3em;
     padding: 0;
     font-family: $body_heading;
-    color: $darker_color;
+    color: $darkerblue_color;
 }
 
 h1 {
@@ -172,7 +174,7 @@ td {
  Forms
 ----------------*/
 label {
-    color: $primary_color;
+    color: $darkerblue_color;
     display: block;
     font-weight: 800;
     margin-bottom: 0.5em;
@@ -201,12 +203,13 @@ textarea {
     color: #666;
     background: #fff;
     background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-    border: 1px solid #bbb;
+    border: 1px solid $darkerblue_color;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     display: block;
-    padding: 0.7em;
+    padding: 7px 10px;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 input[type="text"]:focus,
@@ -250,81 +253,51 @@ input[type="checkbox"] + label {
 button,
 input[type="button"],
 input[type="submit"] {
-    background-color: $brand_color;
+    background-color: $primary_color;
     border: 0;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: #fff;
+    color: $darkerblue_color;
     cursor: pointer;
     display: inline-block;
-    @include rem("font-size", 18);
+    @include rem("font-size", 16);
     line-height: 1;
     padding: 1em 2em;
     text-shadow: none;
     -webkit-transition: background 0.2s;
     transition: background 0.2s;
+
+    &:hover,
+    &:focus {
+        background-color: $darkerblue_color;
+        color: #fff;
+    }
 }
 
-input + button,
-input + input[type="button"],
-input + input[type="submit"] {
-    padding: 0.75em 2em;
-}
 
-button.secondary,
-input[type="reset"],
-input[type="button"].secondary,
-input[type="reset"].secondary,
-input[type="submit"].secondary {
-    background-color: #ddd;
-    color: #222;
-}
 
-button:hover,
-button:focus,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-    background: $darker_color;
-}
-
-button.secondary:hover,
-button.secondary:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="button"].secondary:hover,
-input[type="button"].secondary:focus,
-input[type="reset"].secondary:hover,
-input[type="reset"].secondary:focus,
-input[type="submit"].secondary:hover,
-input[type="submit"].secondary:focus {
-    background: #bbb;
-}
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-    color: #333;
+    color: $secondary_color;
     font-family: $body_text, "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 :-moz-placeholder {
-    color: #333;
+    color:$secondary_color;
     font-family: $body_text, "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 ::-moz-placeholder {
-    color: #333;
-    font-family: $body_text, "Helvetica Neue", helvetica, arial, sans-serif;
+    color: $secondary_color;
     opacity: 1;
     /* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-    color: #333;
-    font-family: $body_text, "Helvetica Neue", helvetica, arial, sans-serif;
+    color: $secondary_color;
 }
 
 

@@ -2,16 +2,169 @@
 1.0  Site Header
 ========================================== */
 .site-header {
-	padding: 10px 0;
+	background: #fff;
+		
+	&__top {
+		background: #f8f8f9;
+		padding: 5px 0;
+		color: $secondary_color;
+			
+		.grid {
+			flex-wrap: wrap;
+		}	
+		.col {
+			&--left,
+			&--right {
+				padding: 0;
+			}
+			&--left {
+				width: 115px;
+				display: flex;
+				align-items: center;
+			}
+			&--right {
+				width: calc(100% - 115px);
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				span {
+					display: inline-block;
+					margin-right: 5px;
+					font-size: 16px;
+					display: none;
+					@include min-breakpoint(360) {
+						display: block;
+					}
+					@include min-breakpoint(768) {
+						display: none;
+						margin-right: 0;
+					}
+				}
+			}
+		}		
+		span {
+			font-size: 18px;
+		}
+		.btn {
+			padding: 4px 15px;
+			font-size: 15px;
+			text-transform: uppercase;
+
+			@include min-breakpoint(768) {
+				display: none;
+			}
+		}
+	}	
+	&__middle {	
+		padding: 13px 0;
+		display: flex;
+		align-items: center;
+	    border-bottom: 1px solid #efebeb;
+		justify-content: space-between;
+		position: relative;
+
+		> div {
+			display: flex;
+		}
+	}
+}
+.site-logo {
+	width: 130px;
+}
+.site-nav {
+	width: calc(100% - 130px);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	nav {
+		display: block;
+	}
+	.btn {
+		display: none;
+	}
+	@include min-breakpoint(768) {
+		.btn {
+			display: block;
+			font-size: 17px;
+			i {
+				display: inline-block;
+				margin-right: 5px;
+			}
+
+		}
+	}
+	#burgerMenu {
+		width: 25px;
+	}
+	.navbar-toggler {
+		padding: 0;
+
+		&-icon {
+			width: auto;
+			height: auto;
+		}
+	}
+	.navbar {
+
+		&__mobile {
+			display: flex;
+			align-items: center;
+		}
+
+		@include breakpoint(767) {
+			position: inherit;
+		}
+		button {
+			&:hover,
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	.navbar-brand {
+		font-weight: 600;
+		font-size: 18px;
+		text-transform: uppercase;
+		@include min-breakpoint(768) {
+			display: none;
+		}
+	}
+	.navbar-collapse {
+		@include breakpoint(767) {
+			margin-top: 20px;
+		    position: absolute;
+		    z-index: 5;
+		    width: 100%;
+		    background: #f4f4f7;
+		    left: 0;
+		    padding: 10px 15px;
+		}
+
+
+	}
+
 }
 
+.main-menu {
+	text-align: right;
 
-/** =========================================
-2.0  Site Navigation
-========================================== */
+	li {
+		display: inline-block;
+		margin-right: 12px;
+		padding: 0;
 
+		a {
+			font-weight: 700;
+			font-size: 19px;
+			transition: color 0.3s ease;
+		}
 
-
-/** =========================================
-3.0  Site Logo
-========================================== */
+		&.current-menu-item {
+			a {
+				color: $primary_color;
+			}
+		}
+	}
+}

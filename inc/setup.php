@@ -32,6 +32,7 @@ if ( ! function_exists( 'themezero_setup' ) ) :
 			add_image_size('banner', '1980', '600');
 			add_image_size('square', '500', '500');
 			add_image_size('thumbnail', '125', '125');
+			add_image_size('blog-thumbnail', '400', '250');
 
 
 			register_nav_menus( array(

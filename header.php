@@ -29,27 +29,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 <!-- Site-header -->
 <header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-3">
-				<!-- Site-logo --> 
-				<div class="site-logo">
-					<?php themezero_get_logo() ?>
-				</div>
-				<!-- ./Site-logo --> 
-			</div>
-			<div class="col-sm-9">
-				<?php if ( has_nav_menu( 'top' ) ) : ?>
-					<!-- Main Menu --> 
-					<div class="main-menu">
-						
-						<?php get_template_part( 'template-parts/navigation/main', 'menu' ); ?>
-			
-					</div>
-					<!-- . Main Menu -->
-				<?php endif; ?>
-			</div>
+	<div class="site-header__top">
+		<div class="container">
+			 <div class="grid">
+			 	 <div class="col--left">
+			 	 	<span>Starts at $7/hr</span>
+			 	 </div>
+			 	 <div class="col--right">
+			 	 	<span>07 3117 0700</span>
+					<a href="#" class="btn btn-primary float-right"><i class="fa fa-phone"></i> Call Now</a> 
+				 </div>
+			 </div>
 		</div>
+	</div>
+	<div class="site-header__middle">
+		<div class="container">
+
+			<!-- Site-logo --> 
+			<div class="site-logo">
+				<a href="<?php echo site_url() ?>"><?php themezero_get_logo() ?></a>
+			</div>
+			<!-- ./Site-logo --> 
+
+			<?php if ( has_nav_menu( 'top' ) ) : ?>
+				<!-- Site Nav --> 
+				<div class="site-nav">
+					<?php get_template_part( 'template-parts/navigation/main', 'menu' ); ?>
+					<a href="#" class="btn btn-primary"> <i class="fa fa-phone"></i> 07 3117 0700</a>
+				</div>
+				<!-- . Site Nav -->
+			<?php endif; ?>
+		</div>	
 	</div>
 </header>
 <!-- ./Site-header -->

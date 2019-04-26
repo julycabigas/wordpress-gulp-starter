@@ -71,6 +71,13 @@ function themezero_mime_types($mimes) {
 
 }
 
+ function clean_script_tag($input) {
+  $input = str_replace("type='text/javascript' ", '', $input);
+  return str_replace("'", '"', $input);
+}
+
+
+add_filter('script_loader_tag', 'clean_script_tag');
 add_filter('show_admin_bar', '__return_false');
 add_filter( 'excerpt_more', 'themezero_excerpt_more' );
 add_filter( 'wp_trim_excerpt', 'themezero_all_excerpts_get_more_link' );

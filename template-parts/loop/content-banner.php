@@ -12,17 +12,20 @@
 
 
 ?>
+<!-- Banner -->
+<div class="banner banner__sub" itemscope itemtype="http://schema.org/WebPageElement">
+	<div class="container">
+		<div class="banner__inner">
+	       
+	          <div class="banner__header">  
 
-<div class="banner" itemscope itemtype="http://schema.org/WebPageElement">
-     <div class="banner__inner">
-       
-          <div class="banner__header">  
+	              <h1 class="banner__title"><?php echo get_the_title() ?></h1>
 
-              <h1 class="banner__title"><?php echo get_the_title() ?></h1>
-
-          </div>  
-          
-     </div>
-  </div><!-- ./banner -->
+	          </div>  
+	          
+	     </div>
+	</div>
+</div>
+<!-- ./banner -->
 
 

@@ -14,21 +14,25 @@ get_header();
 
 
 <main class="content" id="content" itemscope itemtype="http://schema.org/WebPageElement">
+	<?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
+	<!--- Main Content -->
+	<div class="content__main">
+		<div class="container">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="container">
-		<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'template-parts/loop/content', 'page' ); ?>
 
-			<?php get_template_part( 'template-parts/loop/content', 'page' ); ?>
+				<?php
+					
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 
-			<?php
-				
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile;
-		?>
+				endwhile;
+			?>
+		</div>
 	</div>
+	<!-- .Main Content -->
 
 </main>
 

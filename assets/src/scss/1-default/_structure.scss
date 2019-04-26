@@ -154,10 +154,22 @@
 }
 
 .section-padding {
-  padding: 100px 0;
+  padding: 80px 0;
+
+  @include breakpoint(767) {
+     padding: 30px 0;
+  }
 }
-
-
+.container {
+  max-width: 1280px;
+}
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+.page-wrapper {
+  overflow: hidden;
+}
  /*--------------------------------------------------------------
  1.0 Accessibility
  --------------------------------------------------------------*/
@@ -223,9 +235,36 @@
     z-index: 9999999;
     background: url(../img/loader_ico.gif) center no-repeat #fff;
 }
+/* ----------------------------------------------------------------------------
+ * Typo
+ * ------------------------------------------------------------------------- */
+.module { 
+  .sec-title {
+      font-size: 35px;
+      line-height: 1;
+      color: $secondary_color;
+  }  
+}
+.text-center {
+   text-align: center;
+}
 
-
-
+/* ----------------------------------------------------------------------------
+ * Display
+ * ------------------------------------------------------------------------- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.display-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
 
 /* ----------------------------------------------------------------------------
  * WordPress Core Styles

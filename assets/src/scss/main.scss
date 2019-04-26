@@ -7,6 +7,7 @@
 */
 @import "0-vendors/normalize";
 @import "0-vendors/bootstrap";
+@import "0-vendors/carousel";
 
 /*
 2.0 Utilities
@@ -20,17 +21,30 @@
 */
 @import "1-default/base";
 @import "1-default/structure";
+@import "4-components/components";
 
 
 /*
-4.0 Components
+4.0 Homepage
 */
 @import "2-layouts/header";
-
-
-
+@import "3-modules/banner";
+@import "3-modules/features";
+@import "3-modules/leads";
+@import "3-modules/benefits";
+@import "3-modules/team";
+@import "3-modules/testimonials";
+@import "3-modules/partners";
+@import "3-modules/blog";
 @import "2-layouts/footer";
 
 
-
-
+@import "3-modules/form-text";
+@import "3-modules/list-area";
+@import "3-modules/process-area";
+@import "3-modules/two-cols";
+@import "3-modules/form";
+@import "3-modules/video";
+@import "3-modules/founder";
+@import "3-modules/article";
+@import "3-modules/contact";

@@ -1,0 +1,56 @@
+.comments {
+	margin-top: 40px;
+	border-top: 1px solid #f3f2f2;
+	padding-top: 20px;
+
+	h3 {
+		font-size: 22px;
+
+	}
+
+	.comment {
+		padding: 10px 0;
+	}
+	.comment-meta {
+		background: #f9f9f9;
+		padding: 10px;
+		img {
+			max-width: 50px;
+			height: auto;
+		}
+
+		> div {
+			flex-grow: 1;
+		}
+	}
+	.comment-metadata {
+		margin-top: 5px;
+		a {
+			font-size: 14px;
+			line-height: 1;
+		}
+		> a {
+			color: #827f7f;
+		}
+	}
+	.edit-link {
+		margin-left: 5px;
+	}
+	.comment-content {
+		padding: 5px 10px;
+	    box-shadow: 0 11px 25px 0px rgba(117, 114, 114, 0.1);
+	}
+	.reply {
+		margin-top: 5px;
+	}
+}
+
+.comment-respond {
+	margin-top: 30px;
+	border-top: 1px solid #f3f2f2;
+	padding-top: 20px;
+
+	.comment-reply-title {
+		font-size: 22px;
+	}
+}
