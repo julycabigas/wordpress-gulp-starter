@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                <div class="col-md-6">
                   <!-- Copyright -->
                   <div class="copyright">
-                    Ⓒ 2019. Logo Ltd. 
+                    Ⓒ 2019. <?php echo bloginfo('name') ?>
                   </div>
                   <!-- Copyright -->
                </div>

@@ -14,10 +14,9 @@ get_header();
 
 ?>
 
-	<main class="main-content" id="content">
-		<div class="container">
-
-
+	<main class="main-content main-content-404" id="content">
+		<?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
+		<div class="container pt-5 pb-5">
 
 				<h1 class="title"><?php _e( 'Error 404', 'themezero' ); ?></h1>
 
@@ -25,7 +24,7 @@ get_header();
 
 				<div class="meta">
 				
-					<a href="<?php echo esc_url( home_url() ); ?>"><?php _e( 'To the front page', 'themezero' ); ?></a>
+					<a href="<?php echo esc_url( home_url() ); ?>" class="btn btn-primary"><?php _e( 'To the front page', 'themezero' ); ?></a>
 				
 				</div>
 
