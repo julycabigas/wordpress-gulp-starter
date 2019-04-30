@@ -82,7 +82,7 @@ if ( ! function_exists( 'themezero_posted_on' ) ) :
 
             $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
             if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-                $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+                $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
             }
             $time_string = sprintf( $time_string,
                 esc_attr( get_the_date( 'c' ) ),
@@ -92,11 +92,11 @@ if ( ! function_exists( 'themezero_posted_on' ) ) :
             );
             $posted_on = sprintf(
                 esc_html_x( 'Posted on %s', 'post date', 'themezero' ),
-                '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+                 $time_string 
             );
             $byline = sprintf(
                 esc_html_x( 'by %s', 'post author', 'themezero' ),
-                '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+                '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></span>'
             );
             echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
@@ -145,7 +145,8 @@ endif;
 
 /**
 *
-* @return Display Simple Pagination Links
+* @return Display Custom Pagination from custom query
+* @param $query Custom Query
 */
 if ( ! function_exists( 'themezero_pagination_links' ) ) :
 
@@ -197,6 +198,94 @@ if ( ! function_exists( 'themezero_get_logo' ) ) :
         }
 
     
+    }
+
+endif;
+
+
+/**
+*
+* @return Display Archive Pagination
+*/
+if ( ! function_exists( 'themezero_pagination' ) ) :
+
+    function themezero_pagination() {
+        if ( is_singular() ) {
+            return;
+        }
+
+        global $wp_query;
+
+        /** Stop execution if there's only 1 page */
+        if ( $wp_query->max_num_pages <= 1 ) {
+            return;
+        }
+
+        $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+        $max   = intval( $wp_query->max_num_pages );
+
+        /**    Add current page to the array */
+        if ( $paged >= 1 ) {
+            $links[] = $paged;
+        }
+
+        /**    Add the pages around the current page to the array */
+        if ( $paged >= 3 ) {
+            $links[] = $paged - 1;
+            $links[] = $paged - 2;
+        }
+
+        if ( ( $paged + 2 ) <= $max ) {
+            $links[] = $paged + 2;
+            $links[] = $paged + 1;
+        }
+
+        echo '<nav aria-label="Page navigation"><ul class="pagination ">' . "\n";
+
+        /**    Link to first page, plus ellipses if necessary */
+        if ( ! in_array( 1, $links ) ) {
+            $class = 1 == $paged ? ' class="active page-item"' : ' class="page-item"';
+
+            printf( '<li %s><a class="page-link" href="%s"><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>' . "\n",
+            $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+            /**    Previous Post Link */
+            if ( get_previous_posts_link() ) {
+                printf( '<li class="page-item page-item-direction page-item-prev"><span class="page-link">%1$s</span></li> ' . "\n",
+                get_previous_posts_link( '<span aria-hidden="true">&laquo;</span><span class="sr-only">Previous page</span>' ) );
+            }
+
+            if ( ! in_array( 2, $links ) ) {
+                echo '<li class="page-item"></li>';
+            }
+        }
+
+        // Link to current page, plus 2 pages in either direction if necessary.
+        sort( $links );
+        foreach ( (array) $links as $link ) {
+            $class = $paged == $link ? ' class="active page-item"' : ' class="page-item"';
+            printf( '<li %s><a href="%s" class="page-link">%s</a></li>' . "\n", $class,
+                esc_url( get_pagenum_link( $link ) ), $link );
+        }
+
+        // Next Post Link.
+        if ( get_next_posts_link() ) {
+            printf( '<li class="page-item page-item-direction page-item-next"><span class="page-link">%s</span></li>' . "\n",
+                get_next_posts_link( '<span aria-hidden="true">&raquo;</span><span class="sr-only">Next page</span>' ) );
+        }
+
+        // Link to last page, plus ellipses if necessary.
+        if ( ! in_array( $max, $links ) ) {
+            if ( ! in_array( $max - 1, $links ) ) {
+                echo '<li class="page-item"></li>' . "\n";
+            }
+
+            $class = $paged == $max ? ' class="active "' : ' class="page-item"';
+            printf( '<li %s><a class="page-link" href="%s" aria-label="Next"><span aria-hidden="true"><i class="fa fa-step-forward" aria-hidden="true"></i></span><span class="sr-only">%s</span></a></li>' . "\n",
+            $class . '', esc_url( get_pagenum_link( esc_html( $max ) ) ), esc_html( $max ) );
+        }
+
+        echo '</ul></nav>' . "\n";
     }
 
 endif;

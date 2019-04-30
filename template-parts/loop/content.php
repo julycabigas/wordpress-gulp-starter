@@ -10,7 +10,7 @@
 
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article class="single-post-item" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
@@ -20,16 +20,16 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 
 			<div class="entry-meta">
-				<?php zero_posted_on(); ?>
+				<?php themezero_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php echo get_the_post_thumbnail( $post->ID, 'blog-thumbnail' ); ?>
 
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 
 		<?php
 		the_excerpt();
@@ -37,7 +37,7 @@
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'zero' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'themezero' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -46,7 +46,7 @@
 
 	<footer class="entry-footer">
 
-		<?php zero_entry_footer(); ?>
+		<?php themezero_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

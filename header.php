@@ -27,17 +27,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 
 <body <?php body_class(); ?>>
+<!-- Preloader -->
+<div class="preloader">
+	<div class="preloader-inner">
+		  <span class="fa fa-spinner fa-spin" aria-hidden="true"></span>
+	</div>
+</div>	
+<!-- ./Preloader -->
 <!-- Site-header -->
 <header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
 	<div class="site-header__top">
 		<div class="container">
 			 <div class="grid">
 			 	 <div class="col--left">
-			 	 	<span>Starts at $7/hr</span>
+			 	 	<?php if( get_theme_mod('header_info') ) : ?>
+			 	 		<span><?php echo get_theme_mod('header_info') ?></span>
+			 	 	<?php endif; ?>
 			 	 </div>
 			 	 <div class="col--right">
-			 	 	<span>07 3117 0700</span>
-					<a href="#" class="btn btn-primary float-right"><i class="fa fa-phone"></i> Call Now</a> 
+			 	 	<?php if( get_theme_mod('header_info_2') ) : ?>
+			 	 		<?php echo get_theme_mod('header_info_2') ?>
+			 	 	<?php endif; ?>
 				 </div>
 			 </div>
 		</div>
@@ -55,7 +65,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<!-- Site Nav --> 
 				<div class="site-nav">
 					<?php get_template_part( 'template-parts/navigation/main', 'menu' ); ?>
-					<a href="#" class="btn btn-primary"> <i class="fa fa-phone"></i> 07 3117 0700</a>
+					<!-- <?php //if( get_theme_mod('header_button') ) : ?>
+			 	 		<?php //echo get_theme_mod('header_button') ?>
+			 	 	<?php //endif; ?> -->
 				</div>
 				<!-- . Site Nav -->
 			<?php endif; ?>
@@ -65,6 +77,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- ./Site-header -->
 <!-- Accessibility -->
 <div class="container screen-reader-text">
-	<a href="#main">Skip to main content</a>	
+	<a href="#main"><?php __( 'Skip to main content', 'themezero') ?></a>	
 </div>
 <!-- ./Accessibility -->

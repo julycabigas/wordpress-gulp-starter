@@ -52,15 +52,7 @@ if ( ! function_exists( 'themezero_widgets_init' ) ) {
 	 * Initializes themes widgets.
 	 */
 	function themezero_widgets_init() {
-		register_sidebar( array(
-			'name'          => __( 'Shop', 'themezero' ),
-			'id'            => 'custom-shop',
-			'description'   => 'Right sidebar widget area',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
+
 		register_sidebar( array(
 			'name'          => __( 'Right Sidebar', 'themezero' ),
 			'id'            => 'right-sidebar',
@@ -72,38 +64,49 @@ if ( ! function_exists( 'themezero_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Left Sidebar', 'themezero' ),
-			'id'            => 'left-sidebar',
-			'description'   => 'Left sidebar widget area',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-
-		register_sidebar( array(
-			'name'          => __( 'Hero Slider', 'themezero' ),
-			'id'            => 'hero',
-			'description'   => 'Hero slider area. Place two or more widgets here and they will slide!',
-			'before_widget' => '<div class="carousel-item">',
-			'after_widget'  => '</div>',
-			'before_title'  => '',
-			'after_title'   => '',
-		) );
-
-		register_sidebar( array(
-			'name'          => __( 'Hero Static', 'themezero' ),
-			'id'            => 'statichero',
-			'description'   => 'Static Hero widget. no slider functionallity',
-		    'before_widget'  => '<div id="%1$s" class="static-hero-widget %2$s '. themezero_count_widgets( 'statichero' ) .'">', 
-		    'after_widget'   => '</div><!-- .static-hero-widget -->', 
+			'name'          => __( 'Footer About', 'themezero' ),
+			'id'            => 'footer-about',
+			'description'   => 'Widget area below main content and above footer',
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. themezero_count_widgets( 'footerfull' ) .'">', 
+		    'after_widget'   => '</div><!-- .footer-widget -->', 
 		    'before_title'   => '<h3 class="widget-title">', 
-		    'after_title'    => '</h3>',
+		    'after_title'    => '</h3>', 
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Footer Full', 'themezero' ),
-			'id'            => 'footerfull',
+			'name'          => __( 'Footer Menu', 'themezero' ),
+			'id'            => 'footer-menu',
+			'description'   => 'Widget area below main content and above footer',
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. themezero_count_widgets( 'footerfull' ) .'">', 
+		    'after_widget'   => '</div><!-- .footer-widget -->', 
+		    'before_title'   => '<h3 class="widget-title">', 
+		    'after_title'    => '</h3>', 
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'Footer Contact 1', 'themezero' ),
+			'id'            => 'footer-contact-1',
+			'description'   => 'Widget area below main content and above footer',
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. themezero_count_widgets( 'footerfull' ) .'">', 
+		    'after_widget'   => '</div><!-- .footer-widget -->', 
+		    'before_title'   => '<h3 class="widget-title">', 
+		    'after_title'    => '</h3>', 
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'Footer Contact 2', 'themezero' ),
+			'id'            => 'footer-contact-2',
+			'description'   => 'Widget area below main content and above footer',
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. themezero_count_widgets( 'footerfull' ) .'">', 
+		    'after_widget'   => '</div><!-- .footer-widget -->', 
+		    'before_title'   => '<h3 class="widget-title">', 
+		    'after_title'    => '</h3>', 
+		) );
+
+
+		register_sidebar( array(
+			'name'          => __( 'Footer Legal', 'themezero' ),
+			'id'            => 'footer-legal',
 			'description'   => 'Widget area below main content and above footer',
 		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. themezero_count_widgets( 'footerfull' ) .'">', 
 		    'after_widget'   => '</div><!-- .footer-widget -->', 

@@ -20,7 +20,7 @@
 
 			<div class="entry-meta">
 
-				<?php zero_posted_on(); ?>
+				<?php themezero_posted_on(); ?>
 
 			</div><!-- .entry-meta -->
 
@@ -36,7 +36,7 @@
 
 	<footer class="entry-footer">
 
-		<?php zero_entry_footer(); ?>
+		<?php themezero_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

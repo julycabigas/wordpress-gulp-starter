@@ -14,21 +14,23 @@ get_header();
 
 ?>
 
-	<main class="main-content main-content-404" id="content">
+	<main class="main-content" id="content">
 		<?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
-		<div class="container pt-5 pb-5">
+		<div class="container">
+			
+			<div class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'themezero' ); ?></h1>
+				</header><!-- .page-header -->
 
-				<h1 class="title"><?php _e( 'Error 404', 'themezero' ); ?></h1>
-
-				<p><?php _e( "The page you're looking for could not be found. It may have been removed, renamed, or maybe it didn't exist in the first place.", "zero" ); ?></p>
-
-				<div class="meta">
-				
-					<a href="<?php echo esc_url( home_url() ); ?>" class="btn btn-primary"><?php _e( 'To the front page', 'themezero' ); ?></a>
-				
+				<div class="page-content">
+					<p><?php _e( "The page you're looking for could not be found. It may have been removed, renamed, or maybe it didn't exist in the first place.", "themezero" ); ?></p>
 				</div>
 
-
+				<div class="page-footer">
+					<a href="<?php echo esc_url( home_url() ); ?>" class="btn btn-primary"><?php _e( 'To the front page', 'themezero' ); ?></a>
+				</div>
+			</div><!-- .error-404 -->	
 
 		</div>	
 	</main>

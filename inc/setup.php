@@ -12,7 +12,6 @@ if ( ! function_exists( 'themezero_setup' ) ) :
 
 		function themezero_setup() {
 
-
 			/**
 			 * Set the content width based on the theme's design and stylesheet.
 			 */
@@ -37,6 +36,7 @@ if ( ! function_exists( 'themezero_setup' ) ) :
 
 			register_nav_menus( array(
 				'top' => esc_html__( 'Primary Menu', 'themezero' ),
+				'legal' => esc_html__( 'Legal Menu', 'themezero' ),
 				'social' => esc_html__( 'Social Media Menu', 'themezero' ),
 	
 			) );

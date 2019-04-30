@@ -26,31 +26,7 @@ Site Footer
 		}
 
 	}
-
-	.widget-area {
-		margin-bottom: 30px;
-
-		@include min-breakpoint(768) {
-			margin: 0;
-		}
-		h3 {
-			font-size: 19px;	
-		}
-		strong {
-			color: $darkerblue_color;
-		}
-	}
-	.social-links {
-		margin-top: 10px;
-		li {
-			display: inline-block;
-			margin-right: 7px;
-			a {
-				font-size: 20px;
-				transition: all 0.3s ease;
-			}
-		}
-	}
+	
 
 
 	&__bottom {

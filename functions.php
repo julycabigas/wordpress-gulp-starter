@@ -48,11 +48,6 @@ require get_template_directory() .  '/inc/customizer.php';
 require get_template_directory() .  '/inc/template-tags.php';
 
 /**
- * Custom template pagination.
- */
-require get_template_directory() . '/inc/pagination.php';
-
-/**
  * Bootstrap Nav
  */
 require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
