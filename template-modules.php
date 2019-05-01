@@ -10,8 +10,12 @@
 * @package themezero
 */
 
-
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 get_header(); ?>
+
 <?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
 
 <?php

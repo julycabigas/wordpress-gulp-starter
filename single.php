@@ -8,6 +8,11 @@
 * @package themezero
 */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 
 get_template_part( 'template-parts/loop/content', 'banner' );
@@ -23,6 +28,28 @@ get_template_part( 'template-parts/loop/content', 'banner' );
 						<?php get_template_part( 'template-parts/loop/content', 'single' ); ?>
 
 						<?php
+
+							if ( is_singular( 'attachment' ) ) {
+								// Parent post navigation.
+								the_post_navigation(
+									array(
+										/* translators: %s: parent post link */
+										'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'twentynineteen' ), '%title' ),
+									)
+								);
+							} elseif ( is_singular( 'post' ) ) {
+								// Previous/next post navigation.
+								the_post_navigation(
+									array(
+										'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'themezero' ) . '</span> ' .
+											'<span class="screen-reader-text">' . __( 'Next post:', 'themezero' ) . '</span> <br/>' .
+											'<span class="post-title">%title</span>',
+										'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'themezero' ) . '</span> ' .
+											'<span class="screen-reader-text">' . __( 'Previous post:', 'themezero' ) . '</span> <br/>' .
+											'<span class="post-title">%title</span>',
+									)
+								);
+							}
 							//If comments are open or we have at least one comment, load up the comment template.
 							if ( comments_open() || get_comments_number() ) :
 								comments_template();
@@ -32,29 +59,7 @@ get_template_part( 'template-parts/loop/content', 'banner' );
 					<?php endwhile; // end of the loop. ?>    				
     			</div>
     			<div class="col-md-4">
-    				<aside class="sidebar">
-    					<div class="widget-area">
-							<!-- form-alt -->
-							<div class="form-alt">
-								<div class="form-alt__header">
-									<h3>Book an all obligation interview </h3>
-								</div>
-								<form action="" class="form-alt__body">
-									<div class="form-group">
-				                      <input type="text" name="fullname" placeholder="Full Name">
-				                   </div>
-				                   <div class="form-group">
-				                      <input type="email" name="email" placeholder="Email">
-				                   </div>
-				                   <div class="form-group">
-				                      <input type="text" name="phone" placeholder="Phone">
-				                   </div>
-				                   <input type="submit" value="Submit" class="btn btn-primary">
-								</form>
-							</div> 
-							<!-- .form-alt -->	
-						</div>
-    				</aside>
+    					<?php get_sidebar() ?>
     			</div>
     		</div>
 		</div>
@@ -62,3 +67,4 @@ get_template_part( 'template-parts/loop/content', 'banner' );
 
 <?php
 get_footer(); ?>
+

@@ -8,6 +8,11 @@
 * @package themezero
 */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 <?php if ( $comments ) : ?>

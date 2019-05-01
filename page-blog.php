@@ -22,10 +22,11 @@ get_header();
 				<div class="col-lg-8">
 					<?php 
 					    wp_reset_postdata();
+					    $count_posts = get_option('posts_per_page');
 						$args = array(
 								'post_type' => 'post',
 								'post_status' => 'publish',
-								'posts_per_page' => 2,
+								'posts_per_page' => $count_posts,
 								'paged' => get_query_var('paged'),
 								'orderby' => 'date',
 						);
@@ -37,13 +38,15 @@ get_header();
 							while( $query->have_posts() ) : $query->the_post();
 					?>
 							
-							<article class="article-area">
+							<article class="single-article"  <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 								 <figure class="thumbnail">
 								 	  <?php the_post_thumbnail('blog-thumbnail', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']) ?>
 								 </figure>
 								 <div class="info">
-								 
-									<h2><?php the_title(); ?></h2>
+								 	<header class="">
+								 		<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+								 	</header>
+									
 									<?php 
 						
 										$post_categories = wp_get_post_categories( GET_THE_ID() );
@@ -56,7 +59,10 @@ get_header();
 									?>
 									<span class="date-posted"><?php the_time('F j, Y'); ?></span>
 								    
-								    <?php the_excerpt() ?>
+								   	<div class="single-article__content">
+								   		<?php the_excerpt() ?>
+								   	</div>
+								    
 								 </div>
 							</article>	
 							

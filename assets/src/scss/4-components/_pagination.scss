@@ -45,3 +45,27 @@
 		}
 	}
 }
+
+.post-navigation {
+	margin-top: 40px;
+	padding: 20px 0;
+	border-top: 1px solid #f3f1f1;
+	h2 {
+		font-size: 25px;
+	}
+	.nav-links {
+		display: flex;
+
+		> div {
+
+			line-height: 1.5;
+
+			&.nav-next {
+				text-align: right;
+			}
+		}
+		.meta-nav {
+			color: #949292;
+		}
+	}
+}

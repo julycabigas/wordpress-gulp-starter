@@ -22,13 +22,17 @@ body {
     font-family: $body_text;
     @include rem("font-size", 16);
     font-weight: 400;
-    line-height: 1.66;
+    line-height: 1.7;
     letter-spacing: 0; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    &.scroll-enable {
+        overflow: inherit;
+    }
 }
 p {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 }
 
 /*----------------
@@ -44,7 +48,7 @@ h6 {
     line-height: $primary_line_height;
     margin: 0 0 0.3em;
     padding: 0;
-    font-family: $body_heading;
+    font-family: $brand_fontbold;
     color: $darkerblue_color;
 }
 
@@ -203,7 +207,7 @@ textarea {
     color: #666;
     background: transparent;
     background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-    border: 1px solid $darkerblue_color;
+    border: 1px solid #B7C4E3;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     display: block;

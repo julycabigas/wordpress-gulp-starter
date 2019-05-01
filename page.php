@@ -8,10 +8,12 @@
 * @package themezero
 */
 
-get_header();
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-?>
-
+get_header(); ?>
 
 <main class="content" id="content" itemscope itemtype="http://schema.org/WebPageElement">
 	<?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
@@ -35,6 +37,5 @@ get_header();
 	<!-- .Main Content -->
 
 </main>
-
 
 <?php get_footer(); ?>

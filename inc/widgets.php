@@ -57,8 +57,8 @@ if ( ! function_exists( 'themezero_widgets_init' ) ) {
 			'name'          => __( 'Right Sidebar', 'themezero' ),
 			'id'            => 'right-sidebar',
 			'description'   => 'Right sidebar widget area',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget widget-sidebar %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );

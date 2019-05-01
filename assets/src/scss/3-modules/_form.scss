@@ -1,18 +1,17 @@
 .contact-area {
 	@include sectionPaddingMedium;
 	position: relative;
-	background: rgba(81, 233, 183, 0.9);
 
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: url(../images/banner-5.jpg) center center / cover no-repeat;
-		z-index: -1;
-	}
+	// &:before {
+	// 	content: '';
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background: url(../images/banner-5.jpg) center center / cover no-repeat;
+	// 	z-index: -1;
+	// }
 	> div {
 		position: relative;
 		z-index: 2;
@@ -77,6 +76,127 @@
 				&:focus {
 					background: $darkerblue_color;
 					color: #fff;
+				}
+			}
+		}
+	}
+}
+.form-extra {
+		margin-top: 20px;
+
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 0 2px 30px 0 rgba(34, 34, 34, 0.1);
+		@include min-breakpoint(768) {
+			float: right;
+			margin-top: -100px;
+			position: relative;
+			z-index: 3;
+		}
+		&__header {
+			background: $darkerblue_color;
+			padding: 15px 20px;
+			text-align: center;
+			h3 {
+				color: $primary_color;
+				line-height: 1;
+				font-size: 27px;
+				font-weight: 600;
+				border: 0;
+				margin: 0;
+			}
+		}
+		&__body {
+			padding: 25px 20px;
+    		background: #fff;
+			input {
+				&:not([type="submit"]) {
+					border: 0;
+					border-radius: 0;
+					padding: 7px 0;
+					border-bottom: 1px solid #d1d3d6;
+					color: $dark_color;
+					margin-bottom: 15px;
+					&:focus {
+						box-shadow: none;
+						outline: none;
+					}
+					&::-webkit-input-placeholder {
+				    	color: #a7a5a5;
+					}
+					&:-moz-placeholder {
+					    color: #a7a5a5;
+					}
+					&::-moz-placeholder {
+					    color: #a7a5a5;
+					    opacity: 1;
+					    /* Since FF19 lowers the opacity of the placeholder by default */
+					}
+					&:-ms-input-placeholder {
+					    color: #a7a5a5;
+					}
+				}
+				&[type="submit"] {
+					margin-top: 20px;
+					width: 100%;
+					max-width: 100%;
+					background-color: $primary_color;
+					text-transform: uppercase;
+					padding: 12px;
+					transition: background 0.3s ease;
+
+					&:hover,
+					&:focus {
+						background: $darkerblue_color;
+						color: #fff;
+					}
+				}
+			}
+			button {
+					width: 100%;
+					max-width: 100%;
+					background-color: $primary_color;
+					text-transform: uppercase;
+					padding: 12px;
+					transition: background 0.3s ease;
+					border-radius: 5px;
+					font-size: 18px;
+					padding: 7px 10px;
+
+					&:hover,
+					&:focus {
+						background: $darkerblue_color;
+						color: #fff;
+					}
+				}
+		}
+}
+.form {
+	&__search {
+		.input-group {
+			padding-top: 20px;
+			position: relative;
+
+			.field {
+				padding: 5px 10px;
+				display: inline-block;
+				height: 45px;
+				font-size: 17px;
+				margin-right: 5px;
+				border-radius: 3px;
+				position: relative;
+				z-index: 1;
+			}
+
+			&-btn {
+				position: absolute;
+				top: 25px;
+				right: 11px;
+				z-index: 2;
+
+				input {
+					height: 35px;
+					padding:  0 10px;
 				}
 			}
 		}

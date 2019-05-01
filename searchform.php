@@ -8,10 +8,14 @@
 * @package themezero
 */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
-<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" class="form form__search">
 
-	<label class="assistive-text" for="s"><?php esc_html_e( 'Search', 'themezero' ); ?></label>
+	<label class="sr-only assistive-text" for="s"><?php esc_html_e( 'Search', 'themezero' ); ?></label>
 
 	<div class="input-group">
 

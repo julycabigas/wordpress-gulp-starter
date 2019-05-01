@@ -18,6 +18,8 @@ get_header(); ?>
 
 <main class="content" id="content" itemscope itemtype="http://schema.org/Website">
 
+    <?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
+    
 	<div class="container">
 		<?php while ( have_posts() ) : the_post(); ?>
 

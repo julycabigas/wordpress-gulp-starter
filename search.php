@@ -8,45 +8,56 @@
 * @package themezero
 */
 
-get_header();
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
+get_header(); ?>
 
-?>
+		<main class="main-content" id="content" itemscope itemtype="http://schema.org/SearchResultsPage">	
 
-		<main class="main-content" id="content" itemscope itemtype="http://schema.org/SearchResultsPage">
+			<div class="container">
 
-				<?php if ( have_posts() ) : ?>
+				<div class="search-page mt-3 mb-3">
 
-					<header class="page-header">
+						<?php if ( have_posts() ) : ?>
 						
-							<h1 class="page-title"><?php printf(
-							/* translators:*/
-							 esc_html__( 'Search Results for: %s', 'themezero' ),
-								'<span>' . get_search_query() . '</span>' ); ?></h1>
 
-					</header><!-- .page-header -->
+							<header class="page-header">
+								
+									<h1 class="page-title"><?php printf(
+									/* translators:*/
+									 esc_html__( 'Search Results for: %s', 'themezero' ),
+										'<span>' . get_search_query() . '</span>' ); ?></h1>
+
+							</header><!-- .page-header -->
 
 
-					<?php while ( have_posts() ) : the_post(); ?>
+							<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php
-						/**
-						 * Run the loop for the search to output the results.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-search.php and that will be used instead.
-						 */
-						get_template_part( 'template-parts/loop/content', 'search' );
-						?>
+								<?php
+								/**
+								 * Run the loop for the search to output the results.
+								 * If you want to overload this in a child theme then include a file
+								 * called content-search.php and that will be used instead.
+								 */
+								get_template_part( 'template-parts/loop/content', 'search' );
+								?>
 
-					<?php endwhile; ?>
+							<?php endwhile; ?>
 
-				<?php else : ?>
+						<?php else : ?>
 
-					<?php get_template_part( 'template-parts/loop/content', 'none' ); ?>
+							<?php get_template_part( 'template-parts/loop/content', 'none' ); ?>
+					
+						<?php endif; ?>
 
-				<?php endif; ?>
+				</div>
 
-			</main><!-- #main -->
+			</div>
+
+		</main><!-- #main -->
 
 			
 			<?php themezero_pagination(); ?>

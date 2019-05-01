@@ -10,7 +10,30 @@
 	$('.owl-carousel').owlCarousel({
 	    loop:true,
 	    margin:10,
-	    autoplay: true,
+	    autoplay: false,
+	    autoHeight:true,
+	    nav:true,
+	    navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav: false
+	        },
+	        600:{
+	            items:1,
+	            nav: true
+	        },
+	        1000:{
+	            items:1
+	        }
+	    }
+	})
+
+	$('.slider1').owlCarousel({
+	    loop:true,
+	    margin:10,
+	    autoplay: false,
+	    autoHeight:true,
 	    nav:true,
 	    navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
 	    responsive:{
@@ -93,6 +116,7 @@
 
     $(window).on('load', function(){
     	$('.preloader').addClass('hide');
+    	$('body').addClass('scroll-enable');
     });
 
 })(jQuery)
