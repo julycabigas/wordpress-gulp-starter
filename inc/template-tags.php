@@ -190,9 +190,10 @@ if ( ! function_exists( 'themezero_get_logo' ) ) :
 
         $custom_logo_id = get_theme_mod( 'custom_logo' );
 
-        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+       $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
         if ( has_custom_logo() ) {
-                echo wp_get_attachment_image($custom_logo_id);
+                echo '<img src="'. $logo[0] .'" width="'. $logo[1] .'"  height="'. $logo[2] .'" alt="'. get_bloginfo('title') .'" />';
         } else {
                 echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
         }

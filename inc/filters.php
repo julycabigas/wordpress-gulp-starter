@@ -61,25 +61,15 @@ function themezero_body_classes( $classes ) {
     
 }
 
-/**
-*  Add svg upload capability
-*/
-function themezero_mime_types($mimes) {
+function themezero_script_tag($input) {
 
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-
-}
-
- function clean_script_tag($input) {
   $input = str_replace("type='text/javascript' ", '', $input);
   return str_replace("'", '"', $input);
+
 }
 
 
-add_filter('script_loader_tag', 'clean_script_tag');
-add_filter('show_admin_bar', '__return_false');
+add_filter('script_loader_tag', 'themezero_script_tag');
 add_filter( 'excerpt_more', 'themezero_excerpt_more' );
 add_filter( 'wp_trim_excerpt', 'themezero_all_excerpts_get_more_link' );
 add_filter( 'body_class','themezero_body_classes' );
-add_filter( 'upload_mimes', 'themezero_mime_types' );

@@ -21,14 +21,14 @@ function themezero_scripts()
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
 
-        wp_register_script('starter_vendorsJs', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), false, true); 
-        wp_register_script('starter_customJs', get_template_directory_uri() . '/assets/js/custom.min.js', array(), false, true); 
+        wp_register_script('vendorsJs', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), false, true); 
+        wp_register_script('customJs', get_template_directory_uri() . '/assets/js/custom.min.js', array(), false, true); 
 
         wp_enqueue_script('jquery');
-        wp_enqueue_script('starter_vendorsJs'); 
+        wp_enqueue_script('vendorsJs'); 
         wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array(), false, true); 
         wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array(), false, true);
-        wp_enqueue_script('starter_customJs'); 
+        wp_enqueue_script('customJs'); 
 
     }
 
@@ -51,11 +51,13 @@ function themezero_styles()
      */
      //wp_register_style('sero_style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
 
-    wp_register_style('starter_main_style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0', 'all');
-    wp_register_style('starter_fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '1.0', 'all');
+    wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu:500,700', array(), '1.0', 'all');
+    wp_register_style('maincss', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0', 'all');
+    wp_register_style('fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '1.0', 'all');
 
-    wp_enqueue_style('starter_fontawesome');  
-    wp_enqueue_style('starter_main_style'); 
+    wp_enqueue_style('googlefonts'); 
+    wp_enqueue_style('fontawesome');  
+    wp_enqueue_style('maincss'); 
 
  
 

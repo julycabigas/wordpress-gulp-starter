@@ -28,10 +28,9 @@ if ( ! function_exists( 'themezero_setup' ) ) :
 			add_theme_support( 'post-thumbnails' );
 
 
-			add_image_size('banner', '1980', '600');
-			add_image_size('square', '500', '500');
+			add_image_size('banner', '1980', '700');
 			add_image_size('thumbnail', '125', '125');
-			add_image_size('blog-thumbnail', '400', '250');
+			add_image_size('featured', '400', '250');
 
 
 			register_nav_menus( array(
@@ -46,16 +45,15 @@ if ( ! function_exists( 'themezero_setup' ) ) :
 				'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 			) );
 
-			add_theme_support( 'post-formats', array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-			) );
+			// add_theme_support( 'post-formats', array(
+			// 	'aside',
+			// 	'image',
+			// 	'video',
+			// 	'quote',
+			// 	'link',
+			// ) );
 
 
-				
 		    $defaults = array(
 		    	'width'		  => '250',
 		    	'height'	  => '100',

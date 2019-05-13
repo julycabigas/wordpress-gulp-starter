@@ -36,23 +36,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- ./Preloader -->
 <!-- Site-header -->
 <header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
-	<div class="site-header__top">
-		<div class="container">
-			 <div class="grid">
-			 	 <div class="col--left">
-			 	 	<?php if( get_theme_mod('header_info') ) : ?>
-			 	 		<span><?php echo get_theme_mod('header_info') ?></span>
-			 	 	<?php endif; ?>
-			 	 </div>
-			 	 <div class="col--right">
-			 	 	<?php if( get_theme_mod('header_info_2') ) : ?>
-			 	 		<?php echo get_theme_mod('header_info_2') ?>
-			 	 	<?php endif; ?>
-				 </div>
-			 </div>
-		</div>
-	</div>
-	<div class="site-header__middle">
+
+	<div class="site-header-middle">
 		<div class="container">
 
 			<!-- Site-logo --> 
