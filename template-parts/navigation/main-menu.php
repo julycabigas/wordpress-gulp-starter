@@ -14,7 +14,7 @@
 
 <?php if( has_nav_menu('top') ) : ?>
 
-<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar navbar-expand-md" role="navigation">
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar navbar-expand-lg" role="navigation">
 	<div class="navbar__mobile">
 	    <a class="navbar-brand" href="#">Menu</a>
 	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,12 +34,12 @@
 
         wp_nav_menu( array(
 		    'menu'           => 'Primary Menu', // Do not fall back to first non-empty menu.
-		    'depth'	         => 2,
+		    'depth'	         => 3,
 		    'theme_location' => 'top',
 		    'menu_class' 	 => 'nav navbar-nav main-menu',
 		    'container'       => 'div',
 			'container_class' => 'collapse navbar-collapse',
-			'container_id'    => 'navbarSupportedContent',
+			'container_id'    => false,
 			'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 			'walker'          => new WP_Bootstrap_Navwalker(),
 		)); 

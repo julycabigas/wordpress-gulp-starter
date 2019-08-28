@@ -12,29 +12,38 @@
 
 
 ?>
-<!-- Banner -->
-<div class="banner banner__sub" itemscope itemtype="http://schema.org/WebPageElement">
-	<div class="container">
-		<div class="banner__inner">
-	       
-	          <div class="banner__header">  
-					
+<!-- page header -->
+<div class="page-header" itemscope itemtype="http://schema.org/WebPageElement">
+	<div class="auto-container">
+		<div class="page-header-inner">
+
 				 <?php if(  is_archive() ) : ?>	
-					<h1 class="banner__title">
+					<h1>
 						<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</h1>
+				<?php elseif( is_home() ) : 
+
+					        global $post;
+		            		$page_for_posts_id = get_option('page_for_posts');
+
+				            if ( $page_for_posts_id ) { 
+				                $post = get_page($page_for_posts_id);
+				                setup_postdata($post);
+				                                ?>
+								<h1><?php the_title(); ?></h1>
+								<?php rewind_posts(); 
+
+							} ?>	
+
 	             <?php else: ?>
-	              	<h1 class="banner__title"><?php echo get_the_title() ?></h1>
+	              	<h1><?php the_title() ?></h1>
 				 <?php endif; ?>
-				 
-	          </div>  
-	          
 	     </div>
 	</div>
 </div>
-<!-- ./banner -->
+<!-- ./page header -->
 
 

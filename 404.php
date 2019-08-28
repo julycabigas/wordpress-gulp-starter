@@ -24,10 +24,9 @@ get_header();
 		<div class="container">
 			
 			<div class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'themezero' ); ?></h1>
-				</header><!-- .page-header -->
-
+				
+				<h1 class="title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'themezero' ); ?></h1>
+	
 				<div class="page-content">
 					<p><?php _e( "The page you're looking for could not be found. It may have been removed, renamed, or maybe it didn't exist in the first place.", "themezero" ); ?></p>
 				</div>

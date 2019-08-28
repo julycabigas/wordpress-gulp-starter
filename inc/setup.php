@@ -35,6 +35,7 @@ if ( ! function_exists( 'themezero_setup' ) ) :
 
 			register_nav_menus( array(
 				'top' => esc_html__( 'Primary Menu', 'themezero' ),
+				'bottom' => esc_html__( 'Secondary Menu', 'themezero' ),
 				'legal' => esc_html__( 'Legal Menu', 'themezero' ),
 				'social' => esc_html__( 'Social Media Menu', 'themezero' ),
 	

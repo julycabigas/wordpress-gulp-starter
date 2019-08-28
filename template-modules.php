@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
-
 <?php
 
 	// check if the flexible content field has rows of data

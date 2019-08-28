@@ -10,7 +10,7 @@
 module.exports = {
 
 	// Project options.
-	projectURL: 'http://localhost/soho-test', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
+	projectURL: 'http://localhost/wp-test', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: false,
 	injectChanges: true,
@@ -21,6 +21,8 @@ module.exports = {
 	outputStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 	errLogToConsole: true,
 	precision: 10,
+
+
 
 	// JS Vendor options.
 	jsVendorSRC: './assets/src/js/vendor/*.js', // Path to JS vendor folder.
@@ -47,9 +49,9 @@ module.exports = {
 	translationFile: 'WPGULP.pot', // Name of the translation file.
 	translationDestination: './languages', // Where to save the translation files.
 	packageName: 'WPGULP', // Package name.
-	bugReport: 'https://AhmadAwais.com/contact/', // Where can users report bugs.
-	lastTranslator: 'Ahmad Awais <your_email@email.com>', // Last translator Email ID.
-	team: 'AhmadAwais <your_email@email.com>', // Team's Email ID.
+	bugReport: 'https://julycabigas.com', // Where can users report bugs.
+	lastTranslator: 'July Cabigas <julycabigas@yahoo.com>', // Last translator Email ID.
+	team: 'July <julycabigas@yahoo.com>', // Team's Email ID.
 
 	// Browsers you care about for autoprefixing. Browserlist https://github.com/ai/browserslist
 	// The following list is set as per WordPress requirements. Though, Feel free to change.

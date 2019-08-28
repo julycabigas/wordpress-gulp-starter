@@ -20,7 +20,7 @@ get_header(); ?>
 
     <?php get_template_part( 'template-parts/loop/content', 'banner' );  ?>
     
-	<div class="container">
+	<div class="auto-container">
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'template-parts/loop/content', 'page' ); ?>

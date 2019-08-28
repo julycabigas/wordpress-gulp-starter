@@ -39,6 +39,7 @@ const minifycss = require( 'gulp-uglifycss' ); // Minifies CSS files.
 const autoprefixer = require( 'gulp-autoprefixer' ); // Autoprefixing magic.
 const mmq = require( 'gulp-merge-media-queries' ); // Combine matching media queries into one.
 const rtlcss = require( 'gulp-rtlcss' ); // Generates RTL stylesheet.
+const cleanCSS = require('gulp-clean-css');
 
 // JS related plugins.
 const concat = require( 'gulp-concat' ); // Concatenates JS files.
@@ -135,7 +136,7 @@ gulp.task( 'styles', () => {
 		.pipe( mmq({ log: true }) ) // Merge Media Queries only for .min.css version.
 		.pipe( browserSync.stream() ) // Reloads style.css if that is enqueued.
 		.pipe( rename({ suffix: '.min' }) )
-		.pipe( minifycss({ maxLineLen: 10 }) )
+		.pipe( cleanCSS() )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 		.pipe( gulp.dest( config.styleDestination ) )
 		.pipe( filter( '**/*.css' ) ) // Filtering stream to only css files.

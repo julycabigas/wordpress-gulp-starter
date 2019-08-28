@@ -68,8 +68,7 @@ function themezero_script_tag($input) {
 
 }
 
-
-add_filter('script_loader_tag', 'themezero_script_tag');
+//add_filter('script_loader_tag', 'themezero_script_tag');
 add_filter( 'excerpt_more', 'themezero_excerpt_more' );
 add_filter( 'wp_trim_excerpt', 'themezero_all_excerpts_get_more_link' );
 add_filter( 'body_class','themezero_body_classes' );

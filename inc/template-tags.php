@@ -16,7 +16,7 @@
 */
 
 function the_breadcrumb() {
-    $sep = '<span> > </span>';
+    $sep = '<span> &raquo; </span>';
     if (!is_front_page()) {
     
     // Start the breadcrumb with a link to your homepage
@@ -188,20 +188,21 @@ if ( ! function_exists( 'themezero_get_logo' ) ) :
 
     function themezero_get_logo() {
 
-        $custom_logo_id = get_theme_mod( 'custom_logo' );
-
-       $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+       //logo  
+       $custom_logo_id = get_theme_mod( 'custom_logo' );
+       $logo = wp_get_attachment_image( $custom_logo_id , 'full' );
+       //$logo = get_template_directory_uri() . '/assets/images/soho-logo.svg';
 
         if ( has_custom_logo() ) {
-                echo '<img src="'. $logo[0] .'" width="'. $logo[1] .'"  height="'. $logo[2] .'" alt="'. get_bloginfo('title') .'" />';
+                echo $logo;
         } else {
-                echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+                echo get_bloginfo( 'name' );
         }
-
-    
     }
 
 endif;
+
+
 
 
 /**

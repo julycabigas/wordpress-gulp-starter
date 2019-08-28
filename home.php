@@ -29,11 +29,24 @@ get_header();
 	    	<div class="row">
 
 	    		<div class="col-lg-8">
-	    			
-					<?php if ( have_posts() ) : ?>
+	    		
+					<?php 
+						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+						$args = array(
+							'post_type' => 'post',
+							'post_status' => 'publish',
+							'order' => 'DESC',
+							'orderby' => 'date',
+							'posts_per_page' => 5,
+							'paged' => $paged 
+						);
+
+						$query =  NEW WP_Query($args);
+
+						if ( $query->have_posts() ) : ?>
 
 							<?php /* Start the Loop */ ?>
-							<?php while ( have_posts() ) : the_post(); ?>
+							<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 								<?php
 
@@ -51,7 +64,7 @@ get_header();
 
 							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-						<?php endif; ?>
+						<?php endif;  wp_reset_postdata() ?>
 
 					<!-- The pagination component -->
 					<?php themezero_pagination(); ?>

@@ -1,51 +1,31 @@
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
----------------------------------------------------------------- */
+/*-----------------------------------------------------------
+    TABLE OF CONTENTS
 
-/*
-1.0 Vendors
-*/
-@import "0-vendors/normalize";
-@import "0-vendors/bootstrap";
-@import "0-vendors/carousel";
+    1  General Styles
+    2  Typography
+    3  Buttons & Links 
+    4  Utilities & Components
+    5  Header
+    5  Contents & Sections
+    6  Footer
+    8  Pages
+-------------------------------------------------------------*/
 
-/*
-2.0 Utilities
-*/
-@import "5-extras/mixins";
-@import "1-default/fonts";
-@import "5-extras/variables";
+@import "0-vendors/vendors";
 
-/*
-3.0 Global
-*/
+
+
+@import "1-default/variables-&-mixins/mixins";
+
+@import "1-default/fonts/fonts";
+@import "1-default/variables-&-mixins/variables";
+
+
+@import "1-default/general";
 @import "1-default/base";
-@import "1-default/structure";
 @import "4-components/components";
 
 
-/*
-4.0 Homepage
-*/
 @import "2-layouts/header";
-@import "3-modules/banner";
-@import "3-modules/features";
-@import "3-modules/leads";
-@import "3-modules/benefits";
-@import "3-modules/team";
-@import "3-modules/testimonials";
-@import "3-modules/partners";
-@import "3-modules/blog";
 @import "2-layouts/footer";
-
-
-@import "3-modules/form-text";
-@import "3-modules/list-area";
-@import "3-modules/process-area";
-@import "3-modules/two-cols";
-@import "3-modules/form";
-@import "3-modules/video";
-@import "3-modules/founder";
-@import "3-modules/article";
-@import "3-modules/contact";
 @import "2-layouts/sidebar";

@@ -29,29 +29,6 @@ function themezero_customize_register( $wp_customize ) {
 	  'themezero_sanitize_js_callback' => '', 
 	) );
 
-	$wp_customize->add_control('header_top_left', array(
-		'type' => 'text',
-        'label'      => __('Header Top Left', 'themezero'),
-        'section'    => 'themezero_theme_option',
-        'settings'   => 'header_info',
-    ));
-
-    $wp_customize->add_setting( 'header_info_2', array(
-	  'type' => 'theme_mod', 
-	  'capability' => 'edit_theme_options',
-	  'theme_supports' => '', 
-	  'default' => '',
-	  'transport' => 'refresh', 
-	  'themezero_sanitize_js_callback' => '', 
-	) );
-
-	$wp_customize->add_control('header_top_right', array(
-		'type' => 'textarea',
-        'label'      => __('Header Top right', 'themezero'),
-        'section'    => 'themezero_theme_option',
-        'settings'   => 'header_info_2',
-    ));
-
 
 	$wp_customize->add_setting( 'header_button', array(
 	  'type' => 'theme_mod', 
@@ -69,6 +46,23 @@ function themezero_customize_register( $wp_customize ) {
         'settings'   => 'header_button',
     ));
   
+
+    $wp_customize->add_setting( 'footer_form', array(
+	  'type' => 'theme_mod', 
+	  'capability' => 'edit_theme_options',
+	  'theme_supports' => '', 
+	  'default' => '',
+	  'transport' => 'refresh', 
+	  'themezero_sanitize_js_callback' => '', 
+	) );
+
+	$wp_customize->add_control('header_top_right', array(
+		'type' => 'textarea',
+        'label'      => __('Footer Form', 'themezero'),
+        'section'    => 'themezero_theme_option',
+        'settings'   => 'footer_form',
+    ));
+
 
 }
 
